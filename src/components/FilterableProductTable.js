@@ -13,7 +13,6 @@ const FilterableProductTable = () => {
 
   return (
     <div>
-      <h1>Filterable Product Table</h1>
       <SearchBar />
       <ProductTable products={PRODUCTS} />
     </div>

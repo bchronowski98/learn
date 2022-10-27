@@ -1,5 +1,9 @@
-const ProductCategoryRow = () => {
-  return <h1>catrgory row</h1>;
+const ProductCategoryRow = ({ category }) => {
+  return (
+    <tr>
+      <th colSpan={2}>{category}</th>
+    </tr>
+  );
 };
 
 export default ProductCategoryRow;
