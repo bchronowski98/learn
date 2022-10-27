@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SearchBar from "./SearchBar";
 import ProductTable from "./ProductTable";
 
@@ -11,10 +12,22 @@ const FilterableProductTable = () => {
     { category: "Vegetables", price: "$1", stocked: true, name: "Peas" },
   ];
 
+  const [filterText, setFilterText] = useState("fruit");
+  const [inStockOnly, setInStockOnly] = useState(false);
+
   return (
     <div>
-      <SearchBar />
-      <ProductTable products={PRODUCTS} />
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
+        onInStockOnlyChange={setInStockOnly}
+      />
+      <ProductTable
+        products={PRODUCTS}
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+      />
     </div>
   );
 };
